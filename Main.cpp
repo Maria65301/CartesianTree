@@ -4,7 +4,7 @@ int main(int argv, char *argc[])
 {
 	int num;
 	couple *arr;
-	if (argv > 1)
+	if (argv > 1)	// if start order: CartesianTree.exe <coupleNum>
 		sscanf_s(argc[1], "%d", &num);
 	else
 	{
@@ -14,6 +14,7 @@ int main(int argv, char *argc[])
 	}
 	printf("The  number of couples is %d.\n", num);
 	arr = new couple[num];
+	/* To create couples by random */
 	srand((unsigned int)time(NULL));
 	for (int i = 0; i < num; i++)
 	{
@@ -26,6 +27,7 @@ int main(int argv, char *argc[])
 	}
 	printf("====\n");
 	Tree *tree = new Tree;
+	/* To Create Cartesian Tree */
 	for (int i = 0; i < num; i++)
 	{
 		node *pNode = tree->CreateNode(arr[i].key, arr[i].val);
